@@ -1,11 +1,79 @@
+.node {
+  display: block;
+  margin: 0 auto 0 auto;
+}
+
+.tree-container {
+  width: 100%;
+}
+
+.tree-row {
+  display: flex;
+}
+
+.one .tree-node {
+  width: 100%;
+  text-align: center;
+}
+
+.one .node {
+  height: 15rem !important;
+  width: 15rem !important;
+}
+
+.two .tree-node {
+  width: 50%;
+}
+
+.two .node {
+  height: 10rem !important;
+  width: 10rem !important;
+}
+
+.three .tree-node {
+  width: 25%;
+}
+
+.three .node {
+  height: 8rem !important;
+  width: 8rem !important;
+}
+
+.four .tree-node {
+  width: 12.5%;
+}
+
+.four .node {
+  height: 5rem !important;
+  width: 5rem !important;
+}
+
+.five .tree-node {
+  width: 6.25%;
+}
+
+.five .node {
+  height: 4rem !important;
+  width: 4rem !important;
+}
+
+.six .tree-node {
+  width: 3.12%;
+}
+
 .App {
   text-align: center;
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
   pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
 }
 
 .App-header {
