@@ -23,10 +23,12 @@ export interface TimerNodeProps {
   character: string;
 }
 
-const TimerNode = (
-  props: TimerNodeProps & HTMLAttributes<React.ReactElement>
-): JSX.Element => {
-  /*
+const TimerNode = React.forwardRef<
+  SVGSVGElement,
+  TimerNodeProps & HTMLAttributes<SVGSVGElement>
+>(
+  (props, ref): JSX.Element => {
+    /*
 <path 
     d="
     M cx cy
@@ -36,33 +38,34 @@ const TimerNode = (
     "            
 />
   */
-  return (
-    <svg viewBox="0, 0, 368.7, 368.7" className={props.className}>
-      <path
-        style={{ ...timerStyle, strokeDashoffset: `${props.position}` }}
-        d="
+    return (
+      <svg viewBox="0, 0, 368.7, 368.7" className={props.className} ref={ref}>
+        <path
+          style={{ ...timerStyle, strokeDashoffset: `${props.position}` }}
+          d="
             M 184.35, 184.35
             m 0, -159.35
             a 159.35, 159.35  180  1 1  0,318.7
             a 159.35, 159.35  180  1 1  0,-318.7
             "
-      />
-      <circle cx="184.35" cy="184.35" r="159.35" fill="#E6E7E8" />
-      <text
-        style={{
-          color: "#1D3756",
-          fontSize: "15em",
-          fontFamily: "Trebuchet MS"
-        }}
-        x="50%"
-        y="56%"
-        dominantBaseline="middle"
-        textAnchor="middle"
-      >
-        {props.character}
-      </text>
-    </svg>
-  );
-};
+        />
+        <circle cx="184.35" cy="184.35" r="159.35" fill="#E6E7E8" />
+        <text
+          style={{
+            fill: "#1D3756",
+            fontSize: `${(props.character.length === 1 ? "15em" : "8em")}`,
+            fontFamily: "Trebuchet MS"
+          }}
+          x="50%"
+          y="56%"
+          dominantBaseline="middle"
+          textAnchor="middle"
+        >
+          {props.character}
+        </text>
+      </svg>
+    );
+  }
+);
 
 export default TimerNode;

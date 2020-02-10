@@ -1,3 +1,14 @@
+body {
+  background-color: #f8f8f8;
+}
+
+.message {
+  font-size: 6rem;
+  text-align: center;
+  margin: 0.1em 0 0 0;
+  color: #1D3756;
+}
+
 .node {
   display: block;
   margin: 0 auto 0 auto;
@@ -9,6 +20,7 @@
 
 .tree-row {
   display: flex;
+  margin: 0.8em 0;
 }
 
 .one .tree-node {
@@ -17,8 +29,8 @@
 }
 
 .one .node {
-  height: 15rem !important;
-  width: 15rem !important;
+  height: 8rem !important;
+  width: 8rem !important;
 }
 
 .two .tree-node {
@@ -26,8 +38,8 @@
 }
 
 .two .node {
-  height: 10rem !important;
-  width: 10rem !important;
+  height: 7rem !important;
+  width: 7rem !important;
 }
 
 .three .tree-node {
@@ -35,8 +47,8 @@
 }
 
 .three .node {
-  height: 8rem !important;
-  width: 8rem !important;
+  height: 6rem !important;
+  width: 6rem !important;
 }
 
 .four .tree-node {
