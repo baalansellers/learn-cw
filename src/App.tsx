@@ -7,6 +7,23 @@ import CWTree from "./library/CWTree/CWTree";
 const OFFSET_MAX = 1000;
 const TIMER_SPEED = 10;
 
+function useKeyboardEvent(key: string, callback: () => void) {
+  useEffect(() => {
+    const handler = (event: KeyboardEvent) => {
+      console.log(event.key);
+      if (event.key === key) {
+        callback();
+      }
+    };
+
+    window.addEventListener("keydown", handler);
+
+    return () => {
+      window.removeEventListener("keydown", handler);
+    };
+  });
+}
+
 const App = () => {
   const [isPaused, setIsPaused] = useState(true);
   const [offset, setOffset] = useState(0);
@@ -19,12 +36,15 @@ const App = () => {
   //const refNodeE = useRef<SVGSVGElement>(null);
   //const refNodeI = useRef<SVGSVGElement>(null);
 
-  console.log(tree.dict);
   tree.printAllBFT();
 
   const handleClearClick = () => {
     setMessage("");
   };
+
+  const handleBackspaceClick = () => {
+    setMessage(message.slice(0, message.length - 1));
+  }
 
   const handleDitClick = () => {
     setIsPaused(true);
@@ -64,6 +84,11 @@ const App = () => {
       return () => clearTimeout(timerId);
     }
   });
+
+  useKeyboardEvent("ArrowLeft", handleDitClick);
+  useKeyboardEvent("ArrowRight", handleDahClick);
+  useKeyboardEvent("Backspace", handleBackspaceClick);
+  useKeyboardEvent("Delete", handleClearClick);
 
   return (
     <div className="tree-container">

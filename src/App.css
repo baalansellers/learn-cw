@@ -9,6 +9,31 @@ body {
   color: #1D3756;
 }
 
+button {
+	background-color:#6ebe4f;
+	border-radius:28px;
+	border:1px solid #6ebe4f;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:2rem;
+	padding:0.5em 1.2em;
+	text-decoration:none;
+  text-shadow:0px 1px 0px #6ebe4f;
+  margin-right: 0.8em;
+}
+button:hover {
+  background-color:#1d3756;
+	border:1px solid #1d3756;
+	text-shadow:0px 1px 0px #1d3756;
+}
+button:active {
+	position:relative;
+	top:1px;
+}
+
+
 .node {
   display: block;
   margin: 0 auto 0 auto;
