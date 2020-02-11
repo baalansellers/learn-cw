@@ -3,6 +3,7 @@ import "./App.css";
 import TimerNode from "./components/TimerNode/TimerNode";
 import Line from "./components/Line/Line";
 import CWTree from "./library/CWTree/CWTree";
+import { dit, dah } from "./library/Sound/Sound";
 
 const OFFSET_MAX = 1000;
 const TIMER_SPEED = 10;
@@ -47,6 +48,7 @@ const App = () => {
   }
 
   const handleDitClick = () => {
+    dit.play();
     setIsPaused(true);
     tree.offset = 0;
     setTree(tree.dit);
@@ -55,6 +57,7 @@ const App = () => {
   };
 
   const handleDahClick = () => {
+    dah.play();
     setIsPaused(true);
     tree.offset = 0;
     setTree(tree.dah);
