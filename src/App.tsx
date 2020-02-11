@@ -11,7 +11,6 @@ const TIMER_SPEED = 10;
 function useKeyboardEvent(key: string, callback: () => void) {
   useEffect(() => {
     const handler = (event: KeyboardEvent) => {
-      console.log(event.key);
       if (event.key === key) {
         callback();
       }
@@ -36,8 +35,6 @@ const App = () => {
   // }
   //const refNodeE = useRef<SVGSVGElement>(null);
   //const refNodeI = useRef<SVGSVGElement>(null);
-
-  tree.printAllBFT();
 
   const handleClearClick = () => {
     setMessage("");

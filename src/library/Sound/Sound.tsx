@@ -1,13 +1,11 @@
 import UIfx from "uifx";
-import ditSound from "./dit.mp3";
-import dahSound from "./dah.mp3";
 
-export const dit = new UIfx(ditSound, {
+export const dit = new UIfx("https://s3.us-east-2.amazonaws.com/content.alan.codes/dit.mp3", {
   volume: 0.8, // number between 0.0 ~ 1.0
   throttleMs: 100
 });
 
-export const dah = new UIfx(dahSound, {
+export const dah = new UIfx("https://s3.us-east-2.amazonaws.com/content.alan.codes/dah.mp3", {
   volume: 0.8, // number between 0.0 ~ 1.0
   throttleMs: 100
 });
