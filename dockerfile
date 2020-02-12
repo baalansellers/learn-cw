@@ -13,4 +13,4 @@ EXPOSE 5000
 CMD ["serve", "-s", "build"]
 
 # docker build -f dockerfile -t cw-alan-codes:prod .
-# docker run -d --name cw-alan-codes -it -p 5000:5000 --rm cw-alan-codes:prod
+# docker run -d --name alan-codes-cw -it -p 5000:5005 --rm cw-alan-codes:prod
