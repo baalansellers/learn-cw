@@ -66,6 +66,6 @@ workflows:
   build-and-push:
     jobs:
       - build-and-test
-      - push-to-gcloud
-        requires:
-          - build-and-test
+      - push-to-gcloud:
+          requires:
+            - build-and-test
