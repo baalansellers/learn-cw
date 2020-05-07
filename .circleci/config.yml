@@ -31,7 +31,7 @@ jobs:
 
   push-to-gcloud:
     docker:
-      - image: google/gcloud-sdk
+      - image: google/cloud-sdk
     environment:
       - PROJECT_ID: sylvan-octagon-268211
       - IMAGE_NAME: learn-cw-static
