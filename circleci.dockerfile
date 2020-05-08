@@ -1,5 +1,5 @@
 ## Build Environment
-FROM node:12.14.1
+FROM node:12.14.1-buster
 
 ### Build app
 WORKDIR /app
