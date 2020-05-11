@@ -5,7 +5,7 @@ FROM us.gcr.io/sylvan-octagon-268211/learn-cw-static:latest AS build
 FROM node:12.14.1-buster
 WORKDIR /app
 RUN npm install -g serve
-COPY --from=build /app/build /app
+COPY --from=build /app/build /app/build
 
 EXPOSE 5000
-CMD ["serve", "-s", "app"]
+CMD ["serve", "-s", "build"]
